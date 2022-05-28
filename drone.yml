@@ -3,7 +3,7 @@ name: default
 
 steps:
 - name: test
-  image: python
+  image: main.py
   commands:
   - pip install -r requirements.txt
   - pytest
