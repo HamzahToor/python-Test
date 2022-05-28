@@ -1,9 +1,1 @@
-def hello():
-    print("hi")
-
-
-def bye():
-    print("bye")
-
-
-print(hello())
+dprint("Hello Docker Container")
