@@ -1,1 +1,1 @@
-dprint("Hello Docker Container")
+print("Hello Docker Container")
