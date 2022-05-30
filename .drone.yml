@@ -1,0 +1,13 @@
+kind: pipeline
+type: docker
+name: default
+steps:
+- name: Build lib boost
+  image: zouzias/boost:1.72.0
+  commands:
+  - chmod a+x ./buildboost.sh
+  - cd /usr/include/boost
+  - /drone/src/buildboost.sh
+trigger:
+  event:
+  - push
