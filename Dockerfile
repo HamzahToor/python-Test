@@ -10,3 +10,4 @@ COPY main.py ./
 
 #Run the output program
 CMD ["python3","./main.py"]
+
