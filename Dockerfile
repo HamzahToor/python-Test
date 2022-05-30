@@ -1,6 +1,6 @@
 
 #Get the base python image from DockerHub
-FROM python:latest
+FROM ubuntu:latest
 
 #Specify the working directory which holds the application inside the image
 WORKDIR /usr/app/src
