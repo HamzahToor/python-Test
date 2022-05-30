@@ -16,13 +16,16 @@ steps:
 #CMD ["python2 " ,"./main.py"]
 
 
-- name: publish  
-  image: plugins/docker
-  settings:
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
-    repo: rlachhman/myrepo
-    auto_tag: true
-    auto_tag_suffix: drone-build
+kind: pipeline
+type: docker
+name: default
+steps:
+- name: Build lib boost
+  image: zouzias/boost:1.72.0
+  commands:
+  - chmod a+x ./buildboost.sh
+  - cd /usr/include/boost
+  - /drone/src/buildboost.sh
+trigger:
+  event:
+  - push
