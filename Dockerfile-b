@@ -1,0 +1,9 @@
+FROM zouzias/boost:1.72.0
+COPY ./buildboost.sh /buildboost.sh
+WORKDIR /usr/include/boost
+RUN chmod a+x /buildboost.sh
+RUN /buildboost.sh
+COPY ./JSS-GA /app
+RUN mkdir /app/build
+WORKDIR /app/src
+ENTRYPOINT ["/bin/bash", "/app/compile.sh"]
