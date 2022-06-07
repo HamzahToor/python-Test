@@ -9,7 +9,7 @@ WORKDIR /usr/app/src
 COPY main.py ./
 
 RUN apt update
-RUN apt install python2 -y
+
 
 
 #Run the output program
