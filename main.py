@@ -1,2 +1,2 @@
-print("Hello Docker Container")
+print("Hello World from python")
 
