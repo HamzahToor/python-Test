@@ -1,31 +1,9 @@
 kind: pipeline
-type: docker
 name: default
 
 steps:
-
-- name: build
+- name: test
   image: python
   commands:
-    - "go python2 ./main.py"
-  #  RUN apt update
-  #RUN apt install python2 -y
-
-#WORKDIR /usr/app/src
-#COPY main.py ./
-#CMD ["python2 " ,"./main.py"]
-
-
-kind: pipeline
-type: docker
-name: default
-steps:
-- name: Build lib boost
-  image: zouzias/boost:1.72.0
-  commands:
-  - chmod a+x ./buildboost.sh
-  - cd /usr/include/boost
-  - /drone/src/buildboost.sh
-trigger:
-  event:
-  - push
+  - pip install -r requirements.txt
+  - pytest
