@@ -1,9 +1,10 @@
 kind: pipeline
+type: docker
 name: default
-
+   
 steps:
 - name: test
-  image: python
+  image: alpine
   commands:
-  - pip install -r requirements.txt
-  - pytest
+  - echo hello
+  - echo world
